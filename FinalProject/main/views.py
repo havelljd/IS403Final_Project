@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def mainpageView(request):
-    return HttpResponse('This is the login page!!')
+    return render(request, 'betpages/index.html')
 
 def mainlogoutpageView(request):
     return HttpResponse('This is the logout page!!')
