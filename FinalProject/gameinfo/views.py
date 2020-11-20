@@ -4,16 +4,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def gameinfoView(request) :
-    return HttpResponse('Hello Universe! This is the game info view')
+    return render(request, 'gameinfo/gameinfo.html')
 
 def readgameView(request) :
-    return HttpResponse('Hello Universe! This is the read game view')
+    return render(request, 'gameinfo/readgame.html')
 
 def creategameView(request) :
-    return HttpResponse('Hello Universe! This is the create game view')
+    return render(request, 'gameinfo/creategame.html')
 
 def updategameView(request) :
-    return HttpResponse('Hello Universe! This is the update game view')
+    return render(request, 'gameinfo/updategame.html')
 
 def deletegameView(request) :
-    return HttpResponse('Hello Universe! This is the delete game view')
+    return render(request, 'gameinfo/deletegame.html')

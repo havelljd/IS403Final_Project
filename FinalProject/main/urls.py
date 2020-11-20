@@ -3,6 +3,6 @@ from .views import mainpageView, mainlogoutpageView
 
 urlpatterns = [
     
-    path("mainpage/", mainpageView, name="main"),    
-    path("mainlogoutpage/", mainlogoutpageView, name="main"),    
+    path("", mainpageView, name="main"),    
+    path("mainlogoutpage/", mainlogoutpageView, name="mainlogout"),    
 ]

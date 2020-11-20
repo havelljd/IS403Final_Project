@@ -4,16 +4,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def betinfoView(request) :
-    return HttpResponse('Hello Universe! This is the bet info view')
+    return render(request, 'betinfo/betinfo.html')
 
 def readbetView(request) :
-    return HttpResponse('Hello Universe! This is the read bet view')
+    return render(request, 'betinfo/readbet.html')
 
 def createbetView(request) :
-    return HttpResponse('Hello Universe! This is the create bet view')
+    return render(request, 'betinfo/createbet.html')
 
 def updatebetView(request) :
-    return HttpResponse('Hello Universe! This is the update bet view')
+    return render(request, 'betinfo/updatebet.html')
 
 def deletebetView(request) :
-    return HttpResponse('Hello Universe! This is the delete bet view')
+    return render(request, 'betinfo/deletebet.html')

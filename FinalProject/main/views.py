@@ -7,4 +7,4 @@ def mainpageView(request):
     return render(request, 'betpages/index.html')
 
 def mainlogoutpageView(request):
-    return HttpResponse('This is the logout page!!')
+    return render(request, 'betpages/logout.html')
