@@ -21,13 +21,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '=sbvxb!7hlxf_16t8+4h&scp3qrke@*8f#+-tjqp+6!kh&8u=f'
 EMAIL_HOST_USER = os.environ.get('matthewmecham32@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('MechamSpartan#32') 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+
+
+
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.01', 'jefffootballbetproject.heroku.com']
 
@@ -139,4 +143,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-django_heroku.setting(locals())
+django_heroku.settings(locals())
+
+
+
