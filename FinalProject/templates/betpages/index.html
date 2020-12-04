@@ -1,132 +1,148 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
     <!-- Masthead-->
     <header class="masthead">
         <div class="container d-flex h-100 align-items-center">
+                    <img class="img-fluid" src="{% static 'img/maddenRico.png' %}" alt="Madden rico" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: 30%;"/>
             <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one-page Bootstrap theme created by Start Bootstrap.</h2>
-                <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+                <h1 class="mx-auto my-0 text-uppercase">You ready for SOME FOOTBALL?</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5"> ~ TAs feel free to give us an A+ ~</h2>
+                <a class="btn btn-primary js-scroll-trigger" href="#search">Find Game</a>
+                <a class="btn btn-primary js-scroll-trigger" href="#add">Add Game</a>
+                <a class="btn btn-primary js-scroll-trigger" href="#delete">Delete Game</a>
+                <a class="btn btn-primary js-scroll-trigger" href="#update">Update Game</a>
             </div>
+
         </div>
     </header>
-    <!-- About-->
+
+    <header class="masthead">
     <section class="about-section text-center" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
-                    <p class="text-white-50">
-                        Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                        <a href="https://startbootstrap.com/template-overviews/grayscale/">the preview page</a>
-                        . The theme is open source, and you can use it for any purpose, personal or commercial.
+                        <br id='delete'>
+                        <h1 style ="font-size:50px">This is the Delete Form</h1>
+                        <form class="form-inline d-flex" action="{% url 'deletegame' %}" method="get">
+                        {% csrf_token %}
+                        <label for="game_id_delete" style="font-size: 35px; color:grey">What game id to delete:</label>
+                        <br><br>
+                        <input type="text" id="game_id_delete" name="game_id_delete"> 
+                        <br><br>
+                        <br><br><button class="btn btn-primary mx-auto" type="submit" value="Delete">Delete</button>
+                        </form>
                     </p>
                 </div>
             </div>
-            <img class="img-fluid" src="{% static 'img/ipad.png' }" alt="" />
+            <img class="img-fluid" src="{% static 'img/steak.gif' %}" alt="Steak Chuck" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;"/>
         </div>
     </section>
-    <!-- Projects-->
-    <section class="projects-section bg-light" id="projects">
-        <div class="container">
-            <!-- Featured Project Row-->
-            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'img/bg-masthead.jpg' %}" alt="" /></div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>Shoreline</h4>
-                        <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project One Row-->
-            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                <div class="col-lg-6"><img class="img-fluid" src="{% static 'img/demo-image-01.jpg' %}" alt="" /></div>
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Misty</h4>
-                                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                <hr class="d-none d-lg-block mb-0 ml-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Project Two Row-->
-            <div class="row justify-content-center no-gutters">
-                <div class="col-lg-6"><img class="img-fluid" src="{% static 'img/demo-image-02.jpg' %}" alt="" /></div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Mountains</h4>
-                                <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                                <hr class="d-none d-lg-block mb-0 mr-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Signup-->
-    <section class="signup-section" id="signup">
+  </header>
+
+
+<header class="masthead">
+    <section class="about-section text-center" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto text-center">
-                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                    <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                    <form class="form-inline d-flex">
-                        <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                        <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-                    </form>
+                <div class="col-lg-8 mx-auto">
+                        <br id="search" >
+                        <h1 style ="font-size:50px">This is the Read Form</h1>
+                        <form class="form-inline d-flex" action="{% url 'specificgame' %}" method="get">
+                        {% csrf_token %}
+                        <label for="game_id_display" style="font-size: 35px; color:grey">What game id:</label>
+                        <br><br>
+                        <input type="text" id="game_id_display" name="game_id_display"> <br>
+                        <br><br>
+                        <button class="btn btn-primary mx-auto" type="submit" value="Save">Search</button>
+                </form>
+                    </p>
                 </div>
+                            <img class="img-fluid" src="{% static 'img/datingprofileRico.jpg' %}" alt="Rico Photoshoot" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;"/>
             </div>
+
         </div>
     </section>
-    <!-- Contact-->
-    <section class="contact-section bg-black">
+  </header>
+
+
+  <header class="masthead">
+    <section class="about-section text-center" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Address</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Phone</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50">+1 (555) 902-8832</div>
-                        </div>
-                    </div>
+                <div class="col-lg-8 mx-auto">
+                <br  id="add">
+                <h1  style ="font-size:50px">This is the Add Form</h1>
+                <form name="form" method="post" action="{% url 'addgame' %}">
+                {% csrf_token %}
+                <label for='home_team'  class="text-white-50">Enter the Home Team:</label>
+                <input type="text" name='home_team' id='home_team'> <br>
+                <label for='away_team' class="text-white-50">Enter the Away Team:</label>
+                <input type="text" name='away_team' id='away_team'><br>
+                <label for='date_played' class="text-white-50">Enter the Date Played:</label>
+                <input type="date" name='date_played' id='date_played'> <br>
+                <label for='home_team_score' class="text-white-50">Enter the Home Score:</label>
+                <input type="text" name='home_team_score' id='home_team_score'> <br>
+                <label for='away_team_score' class="text-white-50">Enter the Away Score:</label>
+                <input type="text" name='away_team_score' id='away_team_score'> <br><br>
+                <button class="btn btn-primary mx-auto" type="submit" value="Save">Add</button>
+                <br><br>    
+                </form>
+                    </p>
                 </div>
             </div>
-            <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+        <img class="img-fluid" src="{% static 'img/RicoFootballWithVan.jpg' %}" alt="practice" style="  display: block;
+            margin-left: auto;
+            margin-right: auto;
+            size: auto;"/>
+        </div>
+    </section>
+            <br><br><br><br><br><br><br><br><br><br>
+
+  </header>
+
+    <header class="masthead">
+    <section class="about-section text-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                <br id='update'>
+                <h1 style ="font-size:50px">This is the Update Form</h1>
+                <form name="form" method="post" action="{% url 'updategame' %}">
+                {% csrf_token %}
+                <label for='update_game_id'  class="text-white-50">Enter the game ID:
+                <input type="text" name='update_game_id' id-"update_game_id">
+                <br>
+                <label for='home_team' class="text-white-50">Enter the Home Team:</label>
+                <input type="text" name='home_team' id='home_team'> 
+                <br>
+                <label for='away_team'  class="text-white-50">Enter the Away Team:</label>
+                <input type="text" name='away_team' id='away_team'>
+                <br>
+                <label for='date_played' class="text-white-50">Enter the Date Played:</label>
+                <input type="date" name='date_played' id='date_played'>
+                <br> 
+                <label for='home_team_score' class="text-white-50">Enter the Home Score:</label>
+                <input type="text" name='home_team_score' id='home_team_score'> 
+                <br>
+                <label for='away_team_score' class="text-white-50">Enter the Away Score:</label>
+                <input type="text" name='away_team_score' id='away_team_score'>
+                <br><br>
+                <button class="btn btn-primary mx-auto" type="submit" value="Save">Update</button>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+  </header>       
 {% endblock %}

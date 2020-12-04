@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <img href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIi7LnvR0CBS9nkZgx8RGDOEFOiF4nTet0g&usqp=CAU">
+            <div class="mx-auto text-center">
+                {% for game in our_games %}
+                <p >
+                    <b style="font-size: 20px; color:black"> ID:</b> {{game.id}}<br>
+                    <b style="font-size: 20px; color:black"> Winning Team: </b>{{ game.Home_Team | upper }}<br>
+                    <b style="font-size: 20px; color:black"> Losing Team: </b> {{ game.Away_Team | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Date: </b>{{ game.date_played | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Winning Team Score: </b>{{ game.home_team_score | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Losing Team Score: </b>{{ game.away_team_score | upper}}<br>
+                    </p>  
+                {% endfor %} 
+            </div>
+        </div>
+    </header>
+{% endblock %}

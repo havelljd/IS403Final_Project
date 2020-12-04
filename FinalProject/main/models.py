@@ -2,30 +2,11 @@ from django.db import models
 from datetime import datetime
 
 # Create your models here.
-class user (models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30)
 
-    def __str__(self):
-        return(self.first_name + ' ' + self.last_name)
-
-class home_team (models.Model):
-    home_team_name = models.CharField(max_length = 30)
-    nickname = models.CharField(max_length=30)
-
-    def __str__(self):
-        return(self.home_team_name)
-class away_team (models.Model):
-    away_team_name = models.CharField(max_length = 30)
-    nickname = models.CharField(max_length=30)
-
-    def __str__(self):
-        return(self.away_team_name)
 
 class game (models.Model):
-    Home_Team=models.ForeignKey(home_team, on_delete=models.DO_NOTHING)
-    Away_Team=models.ForeignKey(away_team, on_delete=models.DO_NOTHING)
+    Home_Team=models.CharField(max_length = 30)
+    Away_Team=models.CharField(max_length = 30)
     date_played = models.DateField(default=datetime.today, blank = True)
     home_team_score = models.IntegerField(default=0)
     away_team_score = models.IntegerField(default=0)
@@ -34,13 +15,6 @@ class game (models.Model):
 
     def __str__(self):
         return('Game id ' + str(self.id) )
-class bet (models.Model):
-    user_id = models.ForeignKey(user, on_delete=models.DO_NOTHING)
-    game_id = models.ForeignKey(game, on_delete=models.DO_NOTHING)
-    user_team_pick = models.ForeignKey(home_team, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return('Game ID: ' + str(self.game_id) + ' User ID ' + str(self.user_id) + ' Picked Team ' + str(self.user_team_pick))
 
 # The user will input first, last, middle names
 

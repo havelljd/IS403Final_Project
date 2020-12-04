@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <header class="masthead" style=" background-image: linear-gradient(grey, white)">
+    <img class="img-fluid" src="{% static 'img/datingprofileRico.jpg' %}" alt="Madden rico" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: 30%;"/>
+    {% for game in our_games %}
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                
+                <p >
+                    <b style="font-size: 20px; color:black"> ID:</b> {{game.id}}<br>
+                    <b style="font-size: 20px; color:black"> Winning Team: </b>{{ game.Home_Team | upper }}<br>
+                    <b style="font-size: 20px; color:black"> Losing Team: </b> {{ game.Away_Team | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Date: </b>{{ game.date_played | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Winning Team Score: </b>{{ game.home_team_score | upper}}<br>
+                    <b style="font-size: 20px; color:black"> Losing Team Score: </b>{{ game.away_team_score | upper}}<br>
+                    </p>  
+                
+            </div>
+        <img href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIi7LnvR0CBS9nkZgx8RGDOEFOiF4nTet0g&usqp=CAU">
+        </div>
+        {% endfor %}
+    </header>
+    
+{% endblock %}

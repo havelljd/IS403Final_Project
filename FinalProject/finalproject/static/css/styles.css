@@ -10350,5 +10350,5 @@ body {
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
-  background-image: url("{% static 'img/steak.gif'%}")
+  background-image: url("{% static 'img/unclerico.jpg'%}")
 }

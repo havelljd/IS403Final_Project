@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+        {% load static %}
+        {% block content %}
+            {% for game in our_games %}
+            <header class="masthead" style=" background-image: linear-gradient(grey, white)">
+            <div class="container d-flex h-100 align-items-center">
+            <img href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIi7LnvR0CBS9nkZgx8RGDOEFOiF4nTet0g&usqp=CAU">
+            <div class="mx-auto text-center" style="position: relative; height: auto; min-height: 70% ; background-color: white">
+                    <br><br><br><br><br><br><br><br>
+                    <p >
+                        <b style="font-size: 20px; color:black"> Game ID:</b> {{game.id}}<br>
+                        <b style="font-size: 20px; color:black"> Winning Team: </b>{{ game.Home_Team | upper }}<br>
+                        <b style="font-size: 20px; color:black"> Losing Team: </b> {{ game.Away_Team | upper}}<br>
+                        <b style="font-size: 20px; color:black"> Date: </b>{{ game.date_played | upper}}<br>
+                        <b style="font-size: 20px; color:black"> Winning Team Score: </b>{{ game.home_team_score | upper}}<br>
+                        <b style="font-size: 20px; color:black"> Losing Team Score: </b>{{ game.away_team_score | upper}}<br>
+                        </p>
+                    
+                    </div>
+                </div>
+            </header>
+            {% endfor %} 
+        {% endblock %} 
+         

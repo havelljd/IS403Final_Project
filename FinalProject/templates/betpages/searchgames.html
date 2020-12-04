@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <form class="form-inline d-flex" action="{% url 'gamedisplay' %}" method="get">
+                        {% csrf_token %}
+                        <label for="game_id" style="font-size: 35px;">What game id:</label>
+                        <br><br>
+                        <input type="text" id="game_id" name="game_id"> 
+                        <br><br>
+                        <button class="btn btn-primary mx-auto" type="submit" value="Save">Save</button>
+                </form>
+            </div>
+        </div>
+    </header>
+{% endblock %}
